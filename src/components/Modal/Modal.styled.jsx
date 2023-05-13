@@ -38,8 +38,8 @@ const animateButton = keyframes`
   }
   100% {
     transform: translate(
-      ${({ offsetX }) => offsetX}px,
-      ${({ offsetY }) => offsetY}px
+      ${(props) => props.offsetX}px,
+      ${(props) => props.offsetY}px
     );
   }
 `;
@@ -62,6 +62,8 @@ export const BtnNo = styled.button`
     color: #fff;
 
     ${({ isMoved }) =>
-    isMoved && css`animation: ${animateButton} 0.3s linear;
-  `}
+    isMoved &&
+    css`
+      animation: ${animateButton} 0.3s linear infinite alternate;
+    `}
 `
