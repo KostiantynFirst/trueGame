@@ -1,13 +1,13 @@
-import { Modalwindow, Modalcontent, Buttoncontainer, BtnYes, BtnNo } from "./Modal.styled";
+import { Modalwindow, Modalcontent, ModalHeader, Buttoncontainer, BtnYes, BtnNo } from "./Modal.styled";
 
 export const ModalGame = () => {
     return (
       <Modalwindow>
         <Modalcontent>
-          <h2>Are you gay?</h2>
+          <ModalHeader>Ты гей?</ModalHeader>
           <Buttoncontainer>
-            <BtnYes>Yes</BtnYes>
-            <BtnNo>No</BtnNo>
+            <BtnYes>Да</BtnYes>
+            <BtnNo>Нет</BtnNo>
           </Buttoncontainer>
         </Modalcontent>
       </Modalwindow>

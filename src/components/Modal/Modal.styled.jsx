@@ -12,7 +12,7 @@ export const Modalwindow = styled.div`
     align-items: center;
 `
 export const Modalcontent = styled.div`
-    background-color: #fff;
+    background: linear-gradient(45deg, #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -20,12 +20,13 @@ export const Modalcontent = styled.div`
     height: 300px;
 
 ` 
-export const 
-h2 {
-    background: linear-gradient(45deg, #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+export const ModalHeader = styled.h2`
+  font-size: 36px;
+  background: linear-gradient(45deg, #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
 
 export const Buttoncontainer = styled.div`
     margin-top: 20px;
