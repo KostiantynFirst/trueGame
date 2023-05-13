@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const Modalwindow = styled.div`
     position: fixed;
@@ -22,15 +22,28 @@ export const Modalcontent = styled.div`
 ` 
 export const ModalHeader = styled.h2`
   font-size: 36px;
-  background: linear-gradient(45deg, #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
+  background: #fff;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 `
 
-
 export const Buttoncontainer = styled.div`
     margin-top: 20px;
-` 
+`
+
+const animateButton = keyframes`
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(
+      ${({ offsetX }) => offsetX}px,
+      ${({ offsetY }) => offsetY}px
+    );
+  }
+`;
+
 export const BtnYes = styled.button`
     font-size: 24px;
     padding: 10px 20px;
@@ -47,4 +60,8 @@ export const BtnNo = styled.button`
     border-radius: 4px;
     background-color: #f44336;
     color: #fff;
+
+    ${({ isMoved }) =>
+    isMoved && css`animation: ${animateButton} 0.3s linear;
+  `}
 `
