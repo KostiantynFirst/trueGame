@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/truegame/static/css/main.7acaea2f.css",
+    "main.js": "/truegame/static/js/main.07d3183d.js",
+    "index.html": "/truegame/index.html",
+    "main.7acaea2f.css.map": "/truegame/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/truegame/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
