@@ -30,13 +30,20 @@ export const ModalGame = () => {
     const offsetX = randomOffsetX >= 0 ? randomOffsetX + minOffset : randomOffsetX - minOffset;
     const offsetY = randomOffsetY >= 0 ? randomOffsetY + minOffset : randomOffsetY - minOffset;
   
-    setButtonOffset({ x: offsetX, y: offsetY });
+   
 
     const cursorY = e.clientY;
     const buttonRect = e.target.getBoundingClientRect();
     console.log(cursorY);
     console.log(buttonRect.top);
     console.log(buttonRect.bottom);
+
+    if (cursorY <= buttonRect.top && cursorY >= buttonRect.bottom) {
+      setButtonOffset({ x: 0, y: 0}) 
+     } else {
+        setButtonOffset({ x: offsetX, y: offsetY });
+      }
+
   };
 
 
