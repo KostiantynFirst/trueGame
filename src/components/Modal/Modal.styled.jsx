@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Modalwindow = styled.div`
     position: fixed;
@@ -32,18 +32,6 @@ export const Buttoncontainer = styled.div`
     margin-top: 20px;
 `
 
-const animateButton = keyframes`
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(
-      ${(props) => props.offsetX}px,
-      ${(props) => props.offsetY}px
-    );
-  }
-`;
-
 export const BtnYes = styled.button`
     font-size: 24px;
     padding: 10px 20px;
@@ -60,10 +48,4 @@ export const BtnNo = styled.button`
     border-radius: 4px;
     background-color: #f44336;
     color: #fff;
-
-    ${({ isMoved }) =>
-    isMoved &&
-    css`
-      animation: ${animateButton} 0.3s linear infinite alternate;
-    `}
 `
