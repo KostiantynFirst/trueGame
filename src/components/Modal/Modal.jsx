@@ -22,7 +22,7 @@ export const ModalGame = () => {
 
   const [buttonOffset, setButtonOffset] = useState({ x: 0, y: 0 });
 
-  const handleButtonHover = () => {
+  const handleButtonHover = (e) => {
     const minOffset = 50; // Минимальное значение смещения (50 пикселей)
     const randomOffsetX = generateNumberWithMinDifference50();
     const randomOffsetY = generateNumberWithMinDifference50();
@@ -31,13 +31,19 @@ export const ModalGame = () => {
     const offsetY = randomOffsetY >= 0 ? randomOffsetY + minOffset : randomOffsetY - minOffset;
   
     setButtonOffset({ x: offsetX, y: offsetY });
+
+    const cursorY = e.clientY;
+    const buttonRect = e.target.getBoundingClientRect();
+    console.log(cursorY);
+    console.log(buttonRect.top);
+    console.log(buttonRect.bottom);
   };
 
 
 
   // const generateNumberWithMinDifference20 = generateRandomNumberWithMinDifference(20);
   
-  console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
+  // console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
   // console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
   // console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
   // и так далее...
