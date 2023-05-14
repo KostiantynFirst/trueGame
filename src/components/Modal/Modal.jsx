@@ -3,15 +3,14 @@ import { Modalwindow, Modalcontent, ModalHeader, Buttoncontainer, BtnYes, BtnNo 
 
 export const ModalGame = () => {
 
-    const [isButtonMoved, setIsButtonMoved] = useState(false);
-    const [offsetX, setOffsetX] = useState(0);
-    const [offsetY, setOffsetY] = useState(0);
-  
-    const handleButtonHover = () => {
-      setIsButtonMoved(true);
-      setOffsetX(Math.floor(Math.random() * 21) - 10);
-      setOffsetY(Math.floor(Math.random() * 21) - 10);
-    };
+  const [buttonOffset, setButtonOffset] = useState({ x: 0, y: 0 });
+
+  const handleButtonHover = () => {
+    const randomOffsetX = Math.floor(Math.random() * 21) - 100; // Случайное смещение по оси X от -10 до 10
+    const randomOffsetY = Math.floor(Math.random() * 21) - 100; // Случайное смещение по оси Y от -10 до 10
+
+    setButtonOffset({ x: randomOffsetX, y: randomOffsetY });
+  };
 
     return (
       <Modalwindow>
@@ -20,10 +19,10 @@ export const ModalGame = () => {
           <Buttoncontainer>
             <BtnYes>Да</BtnYes>
             <BtnNo             
-                isMoved={isButtonMoved}
-                offsetX={offsetX}
-                offsetY={offsetY}
-                onMouseEnter={handleButtonHover}
+              onMouseEnter={handleButtonHover}
+              style={{
+              transform: `translate(${buttonOffset.x}px, ${buttonOffset.y}px)`
+}}
             >Нет</BtnNo>
           </Buttoncontainer>
         </Modalcontent>
