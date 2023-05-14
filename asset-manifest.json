@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/truegame/static/css/main.7acaea2f.css",
-    "main.js": "/truegame/static/js/main.251d506c.js",
+    "main.js": "/truegame/static/js/main.d5ae1d69.js",
     "index.html": "/truegame/index.html",
     "main.7acaea2f.css.map": "/truegame/static/css/main.7acaea2f.css.map",
-    "main.251d506c.js.map": "/truegame/static/js/main.251d506c.js.map"
+    "main.d5ae1d69.js.map": "/truegame/static/js/main.d5ae1d69.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.251d506c.js"
+    "static/js/main.d5ae1d69.js"
   ]
 }
