@@ -59,7 +59,7 @@ export const ModalGame = () => {
       <Modalwindow>
         <Modalcontent>
           <ModalHeader>Володя, ты гей?</ModalHeader>
-          <ModalParagraph>(приложение не позволяет использование неправдивых данных)</ModalParagraph>
+          <ModalParagraph>(приложение не позволяет использовать неправдивые данные)</ModalParagraph>
           <Buttoncontainer>
             <BtnYes onClick={handleYesClick}>Да</BtnYes>
             <BtnNo             
