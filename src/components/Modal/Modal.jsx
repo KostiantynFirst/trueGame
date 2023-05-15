@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Modalwindow, Modalcontent, ModalHeader, ModalParagraph, Buttoncontainer, BtnYes, BtnNo } from "./Modal.styled";
+import { Modalwindow, Modalcontent, ModalHeader } from "./Modal.styled";
+import { MaodalwindowContainer } from "components/Modalwindow/Modalwindow";
 
 export const ModalGame = () => {
 
@@ -56,23 +57,11 @@ export const ModalGame = () => {
         </Modalcontent> 
       </Modalwindow>
     ) : (
-      <Modalwindow>
-        <Modalcontent>
-          <ModalHeader>Володя, ты гей?</ModalHeader>
-          <ModalParagraph>(приложение не позволяет использовать неправдивые данные)</ModalParagraph>
-          <Buttoncontainer>
-            <BtnYes onClick={handleYesClick}>Да</BtnYes>
-            <BtnNo             
-              onMouseEnter={generateRandomTrajectory}
-              // onFocus={handleButtonHover}
-              onClick={generateRandomTrajectory}
-              style={{
-              transform: `translate(${buttonOffset.x}px, ${buttonOffset.y}px)`
-}}
-            >Нет</BtnNo>
-          </Buttoncontainer>
-        </Modalcontent>
-      </Modalwindow>
+      <MaodalwindowContainer
+        handleYesClick={handleYesClick}
+        generateRandomTrajectory={generateRandomTrajectory}
+        buttonOffset={buttonOffset}
+      />
     )}
     </>
     );
