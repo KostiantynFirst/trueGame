@@ -16,12 +16,20 @@ export const Modalcontent = styled.div`
     padding: 20px;
     text-align: center;
     border-radius: 8px;
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
 
 ` 
 export const ModalHeader = styled.h2`
   font-size: 36px;
+  background: #fff;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
+export const ModalParagraph = styled.h2`
+  font-size: 14px;
   background: #fff;
   -webkit-background-clip: text;
   background-clip: text;
