@@ -32,6 +32,9 @@ export const ModalGame = () => {
         case 3: // Left
           if (x > -maxWidth) x -= 40;
           break;
+          default:
+            x = 0
+            y = 0
       }
 
       trajectory.push({ x, y });
