@@ -3,67 +3,49 @@ import { Modalwindow, Modalcontent, ModalHeader, Buttoncontainer, BtnYes, BtnNo 
 
 export const ModalGame = () => {
 
-  const generateRandomNumberWithMinDifference = (minDifference) => {
-    let previousNumber = 0;
-  
-    return () => {
-      const min = previousNumber + minDifference;
-      const max = min + minDifference;
-  
-      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-      previousNumber = randomNumber;
-  
-      return randomNumber;
-    };
-  };
-  
-  // Пример использования функции для генерации случайных чисел с минимальной разницей 20
-  const generateNumberWithMinDifference50 = generateRandomNumberWithMinDifference(50);
-
   const [buttonOffset, setButtonOffset] = useState({ x: 0, y: 0 });
-
-  const handleButtonHover = (e) => {
-    const minOffset = 50; // Минимальное значение смещения (50 пикселей)
-    const randomOffsetX = generateNumberWithMinDifference50();
-    const randomOffsetY = generateNumberWithMinDifference50();
   
-    const offsetX = randomOffsetX >= 0 ? randomOffsetX + minOffset : randomOffsetX - minOffset;
-    const offsetY = randomOffsetY >= 0 ? randomOffsetY + minOffset : randomOffsetY - minOffset;
-  
-   
+  const generateRandomTrajectory = () => {
+    const length = 10; // Specify the desired length of the trajectory
+    let trajectory = [];
+    let x = 0;
+    let y = 0;
 
-    const cursorY = e.clientY;
-    const buttonRect = e.target.getBoundingClientRect();
-    console.log(cursorY);
-    console.log(buttonRect.top);
-    console.log(buttonRect.bottom);
+    for (let i = 0; i < length; i++) {
+      let direction = Math.floor(Math.random() * 4); // Generate a random number from 0 to 3
 
-    if (cursorY <= buttonRect.top && cursorY >= buttonRect.bottom) {
-      setButtonOffset({ x: 0, y: 0}) 
-     } else {
-        setButtonOffset({ x: offsetX, y: offsetY });
+      // Update the coordinates based on the random direction
+      switch (direction) {
+        case 0: // Up
+          y+=50;
+          break;
+        case 1: // Right
+          x+=50;
+          break;
+        case 2: // Down
+          y-=50;
+          break;
+        case 3: // Left
+          x-=50;
+          break;
       }
 
+      trajectory.push({ x: x, y: y });
+    }
+
+    setButtonOffset(trajectory[trajectory.length - 1]);
   };
 
-
-
-  // const generateNumberWithMinDifference20 = generateRandomNumberWithMinDifference(20);
-  
-  // console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
-  // console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
-  // console.log(generateNumberWithMinDifference50()); // Случайное число с минимальной разницей 20 от предыдущего
-  // и так далее...
-  
-    
-    return (
+  return (
       <Modalwindow>
         <Modalcontent>
           <ModalHeader>Володя, ты гей?</ModalHeader>
           <Buttoncontainer>
             <BtnYes>Да</BtnYes>
             <BtnNo             
-              onMouseEnter={handleButtonHover}
+              onMouseEnter={generateRandomTrajectory}
+              // onFocus={handleButtonHover}
+              onClick={generateRandomTrajectory}
               style={{
               transform: `translate(${buttonOffset.x}px, ${buttonOffset.y}px)`
 }}
