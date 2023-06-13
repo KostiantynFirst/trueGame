@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Modalwindow, Modalcontent, ModalHeader } from "./Modal.styled";
 import { MaodalwindowContainer } from "components/Modalwindow/Modalwindow";
 
@@ -34,8 +34,8 @@ export const ModalGame = () => {
           if (x > -maxWidth) x -= 40;
           break;
           default:
-            x = 0
-            y = 0
+            x = 0;
+            y = 0;
       }
 
       trajectory.push({ x, y });
@@ -46,7 +46,19 @@ export const ModalGame = () => {
 
   const handleYesClick = () => {
     setIsYesClicked(true);
-  }
+  };
+
+  useEffect(() => {
+    if (isYesClicked) {
+      const timer = setTimeout(() => {
+        setIsYesClicked(false);
+      }, 2000);
+
+      return () => {
+        clearInterval(timer);
+      };
+    }
+  }, [isYesClicked]);
 
   return (
     <>
