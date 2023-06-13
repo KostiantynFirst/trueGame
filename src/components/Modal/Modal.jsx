@@ -9,8 +9,8 @@ export const ModalGame = () => {
   
   const generateRandomTrajectory = () => {
     const length = 10; // Specify the desired length of the trajectory
-    const maxWidth = 500; // Maximum horizontal offset
-    const maxHeight = 500; // Maximum vertical offset
+    const maxWidth = 420; // Maximum horizontal offset
+    const maxHeight = 420; // Maximum vertical offset
     
     let trajectory = [];
     let x = 0;
