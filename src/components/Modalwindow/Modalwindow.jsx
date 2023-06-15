@@ -12,7 +12,6 @@ export const MaodalwindowContainer = ({handleYesClick, generateRandomTrajectory,
             <BtnYes onClick={handleYesClick}>Да</BtnYes>
             <BtnNo             
               onMouseEnter={generateRandomTrajectory}
-              // onFocus={handleButtonHover}
               onClick={generateRandomTrajectory}
               style={{
               transform: `translate(${buttonOffset.x}px, ${buttonOffset.y}px)`

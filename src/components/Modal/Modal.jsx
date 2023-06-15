@@ -56,6 +56,7 @@ export const ModalGame = () => {
 
       return () => {
         clearInterval(timer);
+        setButtonOffset({ x: 0, y: 0 })
       };
     }
   }, [isYesClicked]);
@@ -78,4 +79,3 @@ export const ModalGame = () => {
     </>
     );
   };
-  
