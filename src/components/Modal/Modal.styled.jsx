@@ -6,7 +6,7 @@ export const Modalwindow = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("path/to/lgbt-flag.png"); /* Replace with the path or URL of the LGBT flag image */
+    /* background-image: url("path/to/lgbt-flag.png"); Replace with the path or URL of the LGBT flag image */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
